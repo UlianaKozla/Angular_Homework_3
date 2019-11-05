@@ -8,7 +8,7 @@ import {EventEmitter} from "@angular/core";
 })
 export class FlatComponentComponent {
   flatID: number = '';
-  curs = fetch('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5')
+  curs: number = fetch('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5')
     .then(value => value.json())
     .then(jsonedValue => {
       const USD = jsonedValue.find(currency => {
