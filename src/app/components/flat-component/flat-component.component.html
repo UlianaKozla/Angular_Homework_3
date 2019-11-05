@@ -1,0 +1,13 @@
+<p> City: {{someFlat.city}}</p>
+<p> Squere Metres: {{someFlat.sqM}}</p>
+<p> Price UAH: {{someFlat.price}}</p>
+<hr>
+<div *ngIf="flatID == someFlat.id">
+  <p> Price USD: {{someFlat.price | currency: curs}}</p>
+  <p> Room Count: {{someFlat.roomcount}}</p>
+  <p> Owner name: {{someFlat.owner.name}}</p>
+  <p> Owner surname: {{someFlat.owner.surname}}</p>
+  <p> Owner email: {{someFlat.owner.email}}</p>
+</div>
+<button (click)="showInfo(someFlat.id)">Show more info</button>
+<br>

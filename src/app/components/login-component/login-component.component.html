@@ -1,0 +1,25 @@
+<h3>Login</h3>
+<label [ngStyle]="{color: emailInput.invalid && emailInput.touched ? 'red' : 'black'}">
+  Email:
+</label>
+<input type="text" name="email"
+       [(ngModel)]="user.email"
+       #emailInput="ngModel"
+       required
+       email>
+<br>
+<label [ngStyle]="{color: passwordInput.invalid && passwordInput.touched ? 'red' : 'black'}">
+  Password:
+</label>
+<input type="password" name="password"
+       [(ngModel)]="user.password"
+       #passwordInput="ngModel"
+       required
+       minlength="4">
+<br>
+<button [disabled]="passwordInput.invalid || emailInput.invalid"
+        (click)="loginThisUser()">
+  SUBMIT
+</button>
+<br>
+

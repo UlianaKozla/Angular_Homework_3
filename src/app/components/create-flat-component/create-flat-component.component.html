@@ -1,0 +1,35 @@
+<h3>Create flat</h3>
+
+<label [ngStyle]="{color: cityInput.invalid && cityInput.touched ? 'red' : 'black'}">
+  City:
+</label>
+<input type="text" name="city"
+       [(ngModel)]="flat.city"
+       #cityInput="ngModel"
+       required>
+<br>
+<label [ngStyle]="{color: sqMetresInput.invalid && sqMetresInput.touched ? 'red' : 'black'}">
+  Squere Metres:
+</label>
+<input type="text" name="SQMetres"
+       [(ngModel)]="flat.sqM"
+       #sqMetresInput="ngModel"
+       required>
+<br>
+<label [ngStyle]="{color: priceInput.invalid && priceInput.touched ? 'red' : 'black'}">
+  Price:
+</label>
+<input type="text" name="priceMetres"
+       [(ngModel)]="flat.price"
+       #priceInput="ngModel"
+       required>
+<br>
+<label>Room count</label>
+<input type="text" name="roomCount"
+       [(ngModel)]="flat.roomcount">
+<br>
+<button [disabled]="priceInput.invalid || cityInput.invalid || sqMetresInput.invalid"
+    (click)="createThisFlat()">
+  SUBMIT
+</button>
+<br>

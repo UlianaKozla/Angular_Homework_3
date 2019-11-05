@@ -1,0 +1,38 @@
+<h3>Registration</h3>
+<label [ngStyle]="{color: nameInput.invalid && nameInput.touched ? 'red' : 'black'}">
+  Name:
+</label>
+<input type="text" name="name"
+       [(ngModel)]="user.name"
+       #nameInput="ngModel"
+       required
+       minlength="2">
+<br>
+<label>Surname:</label>
+<input type="text" name="surname"
+       [(ngModel)]="user.surname">
+<br>
+<label [ngStyle]="{color: emailInput.invalid && emailInput.touched ? 'red' : 'black'}">
+  Email:
+</label>
+<input type="text" name="email"
+       [(ngModel)]="user.email"
+       #emailInput="ngModel"
+       required
+       email>
+<br>
+<label [ngStyle]="{color: passwordInput.invalid && passwordInput.touched ? 'red' : 'black'}">
+  Password:
+</label>
+<input type="password" name="password"
+       [(ngModel)]="user.password"
+       #passwordInput="ngModel"
+       required
+       minlength="4">
+<br>
+<button (click)="registerThisUser()"
+        [disabled]="passwordInput.invalid || emailInput.invalid || nameInput.invalid">
+  CONFIRM
+</button>
+<br>
+
